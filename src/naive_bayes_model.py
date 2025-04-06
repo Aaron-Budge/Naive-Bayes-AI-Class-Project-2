@@ -1,7 +1,7 @@
 """
 naive_bayes_model.py
 
-This module provides a simplified Naive Bayes classifier for continuous features.
+This module provides a Naive Bayes classifier for continuous features.
 It includes:
   - CountingProbDist: A class to count observations and estimate probabilities.
   - NaiveBayesContinuous: A function that trains the classifier and returns a prediction function.

@@ -180,6 +180,11 @@ print(cm)
 # - Experiment with different thresholds for defining a hit (thresholds = [65, 70, 75, 80]).
 # - Determine which threshold gives the best model accuracy.
 # - Report your best threshold and the corresponding accuracy.
+
+# - Hint: 
+# Try iterating over a list of possible thresholds (for example, 65, 70, 75, 80). For each threshold, update your target column 'hit' so that a song is marked as a hit if its popularity is greater than or equal to that threshold. Then, split the dataset, train your model, and compute its accuracy on the test set. Store each threshold's accuracy (for example, in a dictionary), and finally, select the threshold with the highest accuracy. Assign this best threshold and its accuracy to the variables best_threshold and best_accuracy.
+
+# - Note: DO NOT write your code here. Only provide the best threshold and accuracy below.
 best_threshold = 0  # YOUR BEST THRESHOLD HERE
 best_accuracy = 0.0  # YOUR BEST ACCURACY HERE (update after testing)
 print(f"Best threshold: {best_threshold}, Best accuracy: {best_accuracy:.2f}")

@@ -74,6 +74,10 @@ class DataSet:
     Methods:
         find_means_and_deviations(): Computes means and standard deviations for each 
         input feature grouped by the target values.
+
+    Usage:
+        dataset = DataSet(train_df, 'target_column_name')
+        means, deviations = dataset.find_means_and_deviations()
     """
     def __init__(self, df, target):
         self.df = df

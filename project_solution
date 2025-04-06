@@ -18,19 +18,22 @@ GitHub repository: https://github.com/aimacode/aima-python
 # - Hint: Use the load_dataset() function from dataset_utils.py. Note that you need to import the function first.
 
 # import necessary modules and load the dataset. Hint: src/dataset_utils.py
+import pandas as pd
+from src.dataset_utils import load_dataset, split_dataset, DataSet
 # YOUR CODE HERE:
 
-data =  # YOUR CODE HERE
+data = load_dataset("data/spotify_hits.csv")
 
 # - Display shape of the DataFrame.
 # - Hint: Use the shape attribute to get the dimensions.
 
-print(f"Data shape: ...") # YOUR CODE HERE
+print(f"data shape: {data.shape}") # SOLUTION: data shape: (510, 13)
 
 # - Displace the first few rows of the DataFrame to understand its structure.
 # - Hint: Use the head() method to display the first few rows.
 
 # YOUR CODE HERE:
+data.head() 
 
 # ---------------------------------------------------------------
 # STEP 2 [10 pts]: Create a Binary Target Column
@@ -38,18 +41,18 @@ print(f"Data shape: ...") # YOUR CODE HERE
 # - Create a new column 'hit' from 'popularity'. A song is a hit if popularity ≥ 70; otherwise, it is not a hit.
 # - Hint: Use a lambda function to create the new column. The new column should be binary (0 for not a hit, 1 for a hit).
 
-data['hit'] = # YOUR CODE HERE
+data['hit'] = (data['popularity'] >= 70).astype(int)
 
 # - Delete the original 'popularity' column as it is no longer needed.
 # - Hint: Use the drop() method to remove the column.
 
 # YOUR CODE HERE:
-data = # YOUR CODE HERE
+data = data.drop(columns=['popularity'])
 
 # - Display unique values of the 'hit' column to verify the transformation.
 
 # YOUR CODE HERE:
-
+data['hit'].unique() # SOLUTION: array([1, 0], dtype=int64). class 0 has 491 rows and class 1 has 19 rows.
 
 # ---------------------------------------------------------------
 # STEP 3 [10 pts]: Preprocess the Dataset
@@ -62,13 +65,13 @@ data = # YOUR CODE HERE
 
 # YOUR CODE HERE:
 # Select numeric columns and remove missing values.
-data = # YOUR CODE HERE
-data = # YOUR CODE HERE
+data = data.select_dtypes(include='number')
+data = data.dropna()
 
 # - Display shape of the DataFrame.
 # - Hint: Use the shape attribute to get the dimensions.
 
-print(f"data shape: ...") # YOUR CODE HERE
+print(f"data shape: {data.shape}") # SOLUTION: data shape: (510, 11)
 
 # ---------------------------------------------------------------
 # STEP 4 [10 pts]: Train/Test Split
@@ -78,10 +81,10 @@ print(f"data shape: ...") # YOUR CODE HERE
 
 # YOUR CODE HERE:
 # Split the dataset.
-train_df, test_df = # YOUR CODE HERE
+train_df, test_df = split_dataset(data, target='hit', test_size=0.2)
 
 # - Display the shape of the training and testing DataFrames.
-print(f"Train shape: {...}, Test shape: {...}") # YOUR CODE HERE
+print(f"Train shape: {train_df.shape}, Test shape: {test_df.shape}") # SOLUTION: Train shape: (400, 11), Test shape: (100, 11)
 
 # ---------------------------------------------------------------
 # STEP 5 [20 pts]: Train the Naive Bayes Model
@@ -92,8 +95,10 @@ print(f"Train shape: {...}, Test shape: {...}") # YOUR CODE HERE
 # YOUR CODE HERE:
 # Create the DataSet object and train the model. Don't forget to import the NaiveBayesContinuous class.
 
-train_dataset = # YOUR CODE HERE
-model = # YOUR CODE HERE
+from src.naive_bayes_model import NaiveBayesContinuous
+
+train_dataset = DataSet(train_df, target='hit')
+model = NaiveBayesContinuous(train_dataset)
 
 # ---------------------------------------------------------------
 # STEP 6 [15 pts]: Make Predictions and Evaluate
@@ -106,17 +111,17 @@ model = # YOUR CODE HERE
 
 # YOUR CODE HERE:
 # Write your loop to predict and calculate accuracy.
-correct = # YOUR CODE HERE:
-total = # YOUR CODE HERE:
-for ... in test_df.iterrows():
-    features = # YOUR CODE HERE:
-    true_label = # YOUR CODE HERE:
-    predicted_label = # YOUR CODE HERE:
+correct = 0
+total = len(test_df)
+for index, row in test_df.iterrows():
+    features = row.drop('hit').to_dict()
+    true_label = row['hit']
+    predicted_label = model(features)
     if predicted_label == true_label:
         correct += 1
-accuracy = # YOUR CODE HERE:
+accuracy = correct / total
 print(f"Model accuracy: {accuracy:.2f}")
-
+# SOLUTION: Model accuracy: 0.62
 
 # ---------------------------------------------------------------
 # STEP 7 [15 pts]: Answer Conceptual Questions
@@ -132,12 +137,13 @@ print(f"Model accuracy: {accuracy:.2f}")
 # Hint: Correlation analysis can help identify influential features. Sort descending by correlation with the target variable. Target variable has correlation of 1.0.
 
 # YOUR CODE HERE:
-correlations = # YOUR CODE HERE
+correlations = train_df.corr()['hit'].abs().sort_values(ascending=False)
 print("Correlation of features with 'hit':")
 print(correlations)
 
-q1_answer = ""  # YOUR ANSWER HERE
-q1_explanation = ""  # YOUR EXPLANATION HERE
+q1_answer = "B"  # YOUR ANSWER HERE
+q1_explanation = "I chose option B because the correlation analysis shows that the features 'danceability', 'acousticness', and 'instrumentalness' have the highest correlation with the target variable 'hit'. These features are numeric and directly related to a song's audio characteristics. The correlation values indicate their influence on predicting a hit, whereas options like 'track_id', 'artist name', and 'genre' are either identifiers or categorical strings not used in the current numeric model. Therefore, option B is the most appropriate based on the data."
+
 
 # Q2 [5 pts]: What assumption does the Naive Bayes model make about the input features? Explain your reasoning.
 #   A. They follow a uniform distribution.
@@ -146,8 +152,9 @@ q1_explanation = ""  # YOUR EXPLANATION HERE
 #   D. They are weighted by importance.
 # Hint: Refer to the Naive Bayes assumption of conditional independence. Ref: https://en.wikipedia.org/wiki/Naive_Bayes_classifier
 
-q2_answer = ""  # YOUR ANSWER HERE
-q2_explanation = ""  # YOUR EXPLANATION HERE
+q2_answer = "C"  # YOUR ANSWER HERE
+q2_explanation = "I chose option C because Naive Bayes classifiers rely on the assumption of conditional independence. This means that each feature is assumed to be independent of the others given the target class. This simplifies the computation of joint probabilities and allows the model to multiply the individual likelihoods of each feature. Although the Gaussian version of Naive Bayes assumes that continuous features follow a normal distribution, the key assumption about the input features is their conditional independence."
+
 
 # Q3 [5 pts]: What is a likely difference if a decision tree is used instead of Naive Bayes? Explain your reasoning.
 #   A. The model will assume independence of features.
@@ -156,9 +163,8 @@ q2_explanation = ""  # YOUR EXPLANATION HERE
 #   D. The model will always perform worse.
 # Hint: Consider how decision trees work compared to Naive Bayes. Ref: https://en.wikipedia.org/wiki/Decision_tree_learning
 
-q3_answer = ""  # YOUR ANSWER HERE
-q3_explanation = ""  # YOUR EXPLANATION HERE
-
+q3_answer = "C"  # YOUR ANSWER HERE
+q3_explanation = "I chose option C because decision trees work by creating splits in the dataset based on feature thresholds that best separate the classes. This is fundamentally different from Naive Bayes, which uses probability distributions and assumes feature independence. Decision trees do not assume independence and instead build a tree structure where internal nodes represent decision rules on features. The model selects the feature and threshold that provides the highest information gain or lowest impurity at each step, making splits a key characteristic of decision tree learning."
 
 # ---------------------------------------------------------------
 # BONUS SECTION: Advanced Analysis [10 bonus pts]
@@ -171,14 +177,18 @@ q3_explanation = ""  # YOUR EXPLANATION HERE
 # - A. Compute and display a confusion matrix comparing the true labels to your model's predictions.
 from sklearn.metrics import confusion_matrix
 # YOUR CODE HERE:
-y_true = # YOUR CODE HERE
-y_pred = # YOUR CODE HERE
-cm = # YOUR CODE HERE
+y_true = test_df['hit'].tolist()
+y_pred = [model(row.drop('hit').to_dict()) for index, row in test_df.iterrows()]
+cm = confusion_matrix(y_true, y_pred)
 print("Confusion Matrix:")
 print(cm)
+# SOLUTION: Confusion Matrix:
+# Confusion Matrix:
+# [[57 37]
+#  [ 1  5]]
 
 # - B. Interpret the confusion matrix. What does it tell you about the model's performance?
-bonus_task_1_interpretation = "" # YOUR INTERPRETATION HERE
+bonus_task_1_interpretation = "The confusion matrix shows that out of 100 test samples, the model correctly predicted 57 non-hit songs (true negatives) and 5 hit songs (true positives). However, it misclassified 37 non-hit songs as hits (false positives) and 1 hit song as a non-hit (false negative). This indicates that the model is better at identifying non-hit songs than hit songs. The high number of false positives suggests that the model may be over-predicting hits, possibly due to class imbalance in the training data where hits are rare."
 
 # BONUS Task 2 [4 pts]:
 # - Experiment with different thresholds for defining a hit (thresholds = [65, 70, 75, 80]).
@@ -189,6 +199,7 @@ bonus_task_1_interpretation = "" # YOUR INTERPRETATION HERE
 # Try iterating over a list of possible thresholds (for example, 65, 70, 75, 80). For each threshold, update your target column 'hit' so that a song is marked as a hit if its popularity is greater than or equal to that threshold. Then, split the dataset, train your model, and compute its accuracy on the test set. Store each threshold's accuracy (for example, in a dictionary), and finally, select the threshold with the highest accuracy. Assign this best threshold and its accuracy to the variables best_threshold and best_accuracy.
 
 # - Note: DO NOT write your code here. Only provide the best threshold and accuracy below.
-best_threshold = 0  # YOUR BEST THRESHOLD HERE
-best_accuracy = 0.0  # YOUR BEST ACCURACY HERE (update after testing)
+best_threshold = 80  # YOUR BEST THRESHOLD HERE
+best_accuracy = 0.99  # YOUR BEST ACCURACY HERE (update after testing)
 print(f"Best threshold: {best_threshold}, Best accuracy: {best_accuracy:.2f}")
+# SOLUTION: Best threshold: 80, Best accuracy: 0.99

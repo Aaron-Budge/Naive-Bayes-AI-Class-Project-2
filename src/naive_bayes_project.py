@@ -144,7 +144,7 @@ q1_explanation = ""  # YOUR EXPLANATION HERE
 #   B. They are normally distributed.
 #   C. They are independent given the target class.
 #   D. They are weighted by importance.
-# Hint: Refer to the Naive Bayes assumption of conditional independence. Ref: https://en.wikipedia.org/wiki/Naive_Bayes_classifier
+# Hint: Refer to the Naive Bayes assumption. Ref: https://en.wikipedia.org/wiki/Naive_Bayes_classifier
 
 q2_answer = ""  # YOUR ANSWER HERE
 q2_explanation = ""  # YOUR EXPLANATION HERE

@@ -96,7 +96,7 @@ train_dataset = # YOUR CODE HERE
 model = # YOUR CODE HERE
 
 # ---------------------------------------------------------------
-# STEP 6 [15 pts]: Make Predictions and Evaluate
+# STEP 6 [20 pts]: Make Predictions and Evaluate
 # ---------------------------------------------------------------
 # - For each song in the test set, extract its features (all columns except 'hit') as a dictionary.
 # - Use the trained model to predict the label.
@@ -119,7 +119,7 @@ print(f"Model accuracy: {accuracy:.2f}")
 
 
 # ---------------------------------------------------------------
-# STEP 7 [15 pts]: Answer Conceptual Questions
+# STEP 7 [10 pts]: Answer Conceptual Questions
 # ---------------------------------------------------------------
 # For each question, assign your answer (as a capital letter "A", "B", "C", or "D"). Add explanations for your choices.
 

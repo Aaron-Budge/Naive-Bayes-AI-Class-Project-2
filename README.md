@@ -70,7 +70,6 @@ The dataset is a preprocessed snapshot of Spotify songs with various audio featu
 2. Navigate to the `src/` folder.
 3. Open the file: `naive_bayes_project.py` and complete the sections marked `# YOUR CODE HERE`.
 4. Run the script using Python: `python naive_bayes_project.py`.
-5. Submit ONLY `naive_bayes_project.py`.
 
 ---
 
@@ -87,3 +86,27 @@ You can install them with:
 ```bash
 pip install pandas numpy scikit-learn
 ```
+
+---
+
+## ✅ How to Submit
+
+Submit your completed `naive_bayes_project.py` file following these guidelines:
+
+- ✅ **Filename format:**  
+  Rename your script as `Lastname_Firstname.py`  
+  (Example: `Doe_John.py`)
+
+- ✅ **What to submit:**  
+  Your final `.py` file should:
+
+  - Run without errors
+  - Include your answers and explanations (as comments or variables)
+  - (Optional) Complete the bonus section for extra credit
+
+- ✅ **Where to submit:**  
+  Upload your renamed `.py` file to the course submission portal (e.g., Blackboard).
+
+---
+
+📌 **Reminder:** Only submit your `.py` file — do not submit the data files, utility scripts, or the entire folder.

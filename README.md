@@ -71,7 +71,7 @@ The dataset is a preprocessed snapshot of Spotify songs with various audio featu
 2. Navigate to the `src/` folder.
 3. Open the file: `naive_bayes_project.py` and complete the sections marked `# YOUR CODE HERE`.
 4. Run the script using Python: `python naive_bayes_project.py`.
-5. Upload the `report/` zipped folder to [Overleaf](https://www.overleaf.com/project).
+5. Navigate to the `report/` folder and upload `report_sample.zip` to [Overleaf](https://www.overleaf.com/project).
 
 ---
 

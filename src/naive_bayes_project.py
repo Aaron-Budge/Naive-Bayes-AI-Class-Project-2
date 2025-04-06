@@ -17,11 +17,20 @@ GitHub repository: https://github.com/aimacode/aima-python
 # - Load the CSV file 'spotify_hits.csv' (located in the 'data' folder) into a pandas DataFrame.
 # - Hint: Use the load_dataset() function from dataset_utils.py. Note that you need to import the function first.
 
-# import necessary modules and load the dataset.
+# import necessary modules and load the dataset. Hint: src/dataset_utils.py
 # YOUR CODE HERE:
 
-data =  None  # YOUR CODE HERE
+data =  # YOUR CODE HERE
 
+# - Display shape of the DataFrame.
+# - Hint: Use the shape attribute to get the dimensions.
+
+print(f"Data shape: ...") # YOUR CODE HERE
+
+# - Displace the first few rows of the DataFrame to understand its structure.
+# - Hint: Use the head() method to display the first few rows.
+
+# YOUR CODE HERE:
 
 # ---------------------------------------------------------------
 # STEP 2 [10 pts]: Create a Binary Target Column
@@ -31,8 +40,13 @@ data =  None  # YOUR CODE HERE
 
 data['hit'] = # YOUR CODE HERE
 
-# - Check the first few rows of the DataFrame to ensure the new column is created correctly.
-# - Hint: Use the head() method to display the first few rows.
+# - Delete the original 'popularity' column as it is no longer needed.
+# - Hint: Use the drop() method to remove the column.
+
+# YOUR CODE HERE:
+data = # YOUR CODE HERE
+
+# - Display unique values of the 'hit' column to verify the transformation.
 
 # YOUR CODE HERE:
 
@@ -49,7 +63,12 @@ data['hit'] = # YOUR CODE HERE
 # YOUR CODE HERE:
 # Select numeric columns and remove missing values.
 data = # YOUR CODE HERE
+data = # YOUR CODE HERE
 
+# - Display shape of the DataFrame.
+# - Hint: Use the shape attribute to get the dimensions.
+
+print(f"data shape: ...") # YOUR CODE HERE
 
 # ---------------------------------------------------------------
 # STEP 4 [10 pts]: Train/Test Split
@@ -61,6 +80,8 @@ data = # YOUR CODE HERE
 # Split the dataset.
 train_df, test_df = # YOUR CODE HERE
 
+# - Display the shape of the training and testing DataFrames.
+print(f"Train shape: {...}, Test shape: {...}") # YOUR CODE HERE
 
 # ---------------------------------------------------------------
 # STEP 5 [20 pts]: Train the Naive Bayes Model

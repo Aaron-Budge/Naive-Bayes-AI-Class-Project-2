@@ -74,8 +74,6 @@ The dataset is a preprocessed snapshot of Spotify songs with various audio featu
    python naive_bayes_project.py
    ```
 
-````
-
 ---
 
 ## 📦 Dependencies
@@ -91,4 +89,7 @@ You can install them with:
 ```bash
 pip install pandas numpy scikit-learn
 ```
-````
+
+```
+
+```

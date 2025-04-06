@@ -34,13 +34,13 @@ This is a structured, step-by-step programming project designed to guide you thr
 
 The dataset is a preprocessed snapshot of Spotify songs with various audio features.
 
-**Dataset Information**
+### Dataset Information
 
 - Number of songs: 510
 - Number of features: 12
 - Target column (original): popularity (continuous)
 
-**Feature Columns**
+### Feature Columns
 
 ```python
 ['genre', 'artist_name', 'acousticness', 'danceability', 'duration_ms',
@@ -48,7 +48,7 @@ The dataset is a preprocessed snapshot of Spotify songs with various audio featu
  'tempo', 'valence']
 ```
 
-**Missing Values (before cleaning)**
+### Missing Values (before cleaning)
 
 | Feature      | Missing |
 | ------------ | ------- |
@@ -58,7 +58,7 @@ The dataset is a preprocessed snapshot of Spotify songs with various audio featu
 | speechiness  | 2       |
 | valence      | 2       |
 
-**Original Target (`popularity`) Unique Values**
+### Original Target (`popularity`) Unique Values
 
 `[0, 1, 3, 5, 6, 7, 8, 9, 10, ..., 93]`
 

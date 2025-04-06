@@ -24,9 +24,10 @@ This is a structured, step-by-step programming project designed to guide you thr
 | Folder / File                | Description                                                     |
 | ---------------------------- | --------------------------------------------------------------- |
 | `data/spotify_hits.csv`      | Dataset of Spotify songs (510 instances, 12 features)           |
-| `src/naive_bayes_project.py` | Main script to complete and submit                              |
+| `src/naive_bayes_project.py` | Main Python script to complete and submit                       |
 | `src/naive_bayes_model.py`   | Provided model implementation for NaiveBayesContinuous          |
 | `src/dataset_utils.py`       | Functions for loading data, splitting, and Gaussian calculation |
+| `report/report_sample.tex`   | Main LaTeX script to complete and submit                        |
 
 ---
 

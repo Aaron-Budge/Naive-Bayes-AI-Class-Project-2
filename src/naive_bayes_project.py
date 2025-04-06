@@ -101,7 +101,7 @@ model = # YOUR CODE HERE
 # - For each song in the test set, extract its features (all columns except 'hit') as a dictionary.
 # - Use the trained model to predict the label.
 # - Compare the prediction to the true 'hit' value and compute the overall accuracy.
-# - Hint: Use the predict() method of the model to get the predicted label.
+# - Hint: Use Naive Bayes' formula to calculate the probability of each class given the features.
 # - Accuracy = (Number of correct predictions) / (Total number of predictions)
 
 # YOUR CODE HERE:
@@ -121,15 +121,21 @@ print(f"Model accuracy: {accuracy:.2f}")
 # ---------------------------------------------------------------
 # STEP 7 [15 pts]: Answer Conceptual Questions
 # ---------------------------------------------------------------
-# For each question, assign your answer (as a capital letter "A", "B", "C", or "D")
-# to the corresponding variable.
-#
+# For each question, assign your answer (as a capital letter "A", "B", "C", or "D"). Add explanations for your choices.
+
 # Q1 [5 pts]: Which features are most likely to influence whether a song is a hit?
 #   A. track_id and duration_ms
-#   B. danceability, energy, and loudness
+#   B. danceability, acousticness, and instrumentalness
 #   C. popularity and tempo
 #   D. artist name and genre
-# Hint: Use the top() method of the CountingProbDist class to find the most frequent features. 
+
+# Hint: Correlation analysis can help identify influential features. Sort descending by correlation with the target variable. Target variable has correlation of 1.0.
+
+# YOUR CODE HERE:
+correlations = # YOUR CODE HERE
+print("Correlation of features with 'hit':")
+print(correlations)
+
 q1_answer = ""  # YOUR ANSWER HERE
 
 # Q2 [5 pts]: What assumption does the Naive Bayes model make about the input features?
@@ -153,22 +159,27 @@ q3_answer = ""  # YOUR ANSWER HERE
 # BONUS SECTION: Advanced Analysis [10 bonus pts]
 # ---------------------------------------------------------------
 # BONUS Task 1 [6 pts]:
-# - Compute and display a confusion matrix comparing the true labels to your model's predictions.
+# - A. Compute and display a confusion matrix comparing the true labels to your model's predictions.
+# - B. Interpret the confusion matrix. What does it tell you about the model's performance?
 # - Hint: You may use sklearn.metrics.confusion_matrix. Ref: https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html
 
+# - A. Compute and display a confusion matrix comparing the true labels to your model's predictions.
 from sklearn.metrics import confusion_matrix
 # YOUR CODE HERE:
 y_true = # YOUR CODE HERE
 y_pred = # YOUR CODE HERE
 cm = # YOUR CODE HERE
 print("Confusion Matrix:")
-# YOUR CODE HERE
+print(cm)
+
+# - B. Interpret the confusion matrix. What does it tell you about the model's performance?
+# YOUR INTERPRETATION HERE:
 
 
 # BONUS Task 2 [4 pts]:
-# - Experiment with different thresholds for defining a hit (e.g., popularity ≥ 65, 75, or 80).
+# - Experiment with different thresholds for defining a hit (thresholds = [65, 70, 75, 80]).
 # - Determine which threshold gives the best model accuracy.
 # - Report your best threshold and the corresponding accuracy.
-best_threshold = 70  # YOUR BEST THRESHOLD HERE
+best_threshold = 0  # YOUR BEST THRESHOLD HERE
 best_accuracy = 0.0  # YOUR BEST ACCURACY HERE (update after testing)
 print(f"Best threshold: {best_threshold}, Best accuracy: {best_accuracy:.2f}")

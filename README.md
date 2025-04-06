@@ -70,6 +70,7 @@ The dataset is a preprocessed snapshot of Spotify songs with various audio featu
 2. Navigate to the `src/` folder.
 3. Open the file: `naive_bayes_project.py` and complete the sections marked `# YOUR CODE HERE`.
 4. Run the script using Python: `python naive_bayes_project.py`.
+5. Upload the `report/` zipped folder to [Overleaf](https://www.overleaf.com/project).
 
 ---
 
@@ -94,19 +95,31 @@ pip install pandas numpy scikit-learn
 Submit your completed `naive_bayes_project.py` file following these guidelines:
 
 - ✅ **Filename format:**  
-  Rename your script as `Lastname_Firstname.py`  
-  (Example: `Doe_John.py`)
+  Your Python script must be named according to the three project members’ last names in the format: `NBC-A_B_C.py`
+  where:
 
-- ✅ **What to submit:**  
-  Your final `.py` file should:
+- **NBC** stands for _Naive Bayes Classifier_
+- **A**, **B**, **C** are the last names of the 1st, 2nd, and 3rd group members
 
-  - Run without errors
-  - Include your answers and explanations (as comments or variables)
-  - (Optional) Complete the bonus section for extra credit
+Example: `NBC-Smith_Jones_Kim.py`
+
+- ✅ **What to submit:**
+
+1. Your final `.py` file should:
+
+   - Run without errors
+   - Include your answers and explanations (as comments or variables)
+   - (Optional) Complete the bonus section for extra credit
+
+2. **A written PDF report** (`NBCReport-Smith_Jones_Kim.pdf`) that contains only your outputs and your written discussion.
+
+- Do not include full code in the report—only outputs.
+- Use the three defined colors to highlight each member’s name in the title and contributions.
+- Use [Overleaf](https://www.overleaf.com/project) to compile `report_sample.tex` and include only the resulting PDF in your ZIP.
 
 - ✅ **Where to submit:**  
   Upload your renamed `.py` file to the course submission portal (e.g., Blackboard).
 
 ---
 
-📌 **Reminder:** Only submit your `.py` file — do not submit the data files, utility scripts, or the entire folder.
+📌 **Reminder:** Only submit your `.py` file and `.pdf` file together zipped as `NBC-Smith_Jones_Kim.zip` — do not submit the data files, utility scripts, \LaTeX script or the entire folder.

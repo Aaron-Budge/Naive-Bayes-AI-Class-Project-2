@@ -123,7 +123,7 @@ print(f"Model accuracy: {accuracy:.2f}")
 # ---------------------------------------------------------------
 # For each question, assign your answer (as a capital letter "A", "B", "C", or "D"). Add explanations for your choices.
 
-# Q1 [5 pts]: Which features are most likely to influence whether a song is a hit?
+# Q1 [5 pts]: Which features are most likely to influence whether a song is a hit? Explain your reasoning.
 #   A. track_id and duration_ms
 #   B. danceability, acousticness, and instrumentalness
 #   C. popularity and tempo
@@ -137,22 +137,27 @@ print("Correlation of features with 'hit':")
 print(correlations)
 
 q1_answer = ""  # YOUR ANSWER HERE
+q1_explanation = ""  # YOUR EXPLANATION HERE
 
-# Q2 [5 pts]: What assumption does the Naive Bayes model make about the input features?
+# Q2 [5 pts]: What assumption does the Naive Bayes model make about the input features? Explain your reasoning.
 #   A. They follow a uniform distribution.
 #   B. They are normally distributed.
 #   C. They are independent given the target class.
 #   D. They are weighted by importance.
 # Hint: Refer to the Naive Bayes assumption of conditional independence. Ref: https://en.wikipedia.org/wiki/Naive_Bayes_classifier
-q2_answer = ""  # YOUR ANSWER HERE
 
-# Q3 [5 pts]: What is a likely difference if a decision tree is used instead of Naive Bayes?
+q2_answer = ""  # YOUR ANSWER HERE
+q2_explanation = ""  # YOUR EXPLANATION HERE
+
+# Q3 [5 pts]: What is a likely difference if a decision tree is used instead of Naive Bayes? Explain your reasoning.
 #   A. The model will assume independence of features.
 #   B. The model will assign probabilities instead of decision rules.
 #   C. The model will create splits based on feature thresholds.
 #   D. The model will always perform worse.
 # Hint: Consider how decision trees work compared to Naive Bayes. Ref: https://en.wikipedia.org/wiki/Decision_tree_learning
+
 q3_answer = ""  # YOUR ANSWER HERE
+q3_explanation = ""  # YOUR EXPLANATION HERE
 
 
 # ---------------------------------------------------------------
@@ -173,8 +178,7 @@ print("Confusion Matrix:")
 print(cm)
 
 # - B. Interpret the confusion matrix. What does it tell you about the model's performance?
-# YOUR INTERPRETATION HERE:
-
+bonus_task_1_interpretation = "" # YOUR INTERPRETATION HERE
 
 # BONUS Task 2 [4 pts]:
 # - Experiment with different thresholds for defining a hit (thresholds = [65, 70, 75, 80]).

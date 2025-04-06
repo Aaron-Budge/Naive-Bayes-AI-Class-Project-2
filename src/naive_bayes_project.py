@@ -119,11 +119,11 @@ print(f"Model accuracy: {accuracy:.2f}")
 
 
 # ---------------------------------------------------------------
-# STEP 7 [10 pts]: Answer Conceptual Questions
+# STEP 7 [20 pts]: Answer Conceptual Questions
 # ---------------------------------------------------------------
 # For each question, assign your answer (as a capital letter "A", "B", "C", or "D"). Add explanations for your choices.
 
-# Q1 [5 pts]: Which features are most likely to influence whether a song is a hit? Explain your reasoning.
+# Q1 [10 pts]: Which features are most likely to influence whether a song is a hit? Explain your reasoning.
 #   A. track_id and duration_ms
 #   B. danceability, acousticness, and instrumentalness
 #   C. popularity and tempo

@@ -27,7 +27,7 @@ This is a structured, step-by-step programming project designed to guide you thr
 | `src/naive_bayes_project.py` | Main Python script to complete and submit                       |
 | `src/naive_bayes_model.py`   | Provided model implementation for NaiveBayesContinuous          |
 | `src/dataset_utils.py`       | Functions for loading data, splitting, and Gaussian calculation |
-| `report/report_sample.zip`   | Main LaTeX script to complete and submit                        |
+| `report/report_sample.docx`  | Main MS Word Doc file to complete and submit                    |
 
 ---
 
@@ -68,10 +68,9 @@ The dataset is a preprocessed snapshot of Spotify songs with various audio featu
 ## 🚀 How to Start
 
 1. **Clone or download** this repository.
-2. Navigate to the `src/` folder.
+2. Navigate to the `src/` folder and `report/` folder to write your report in `report_sample.docx`.
 3. Open the file: `naive_bayes_project.py` and complete the sections marked `# YOUR CODE HERE`.
 4. Run the script using Python: `python naive_bayes_project.py`.
-5. Navigate to the `report/` folder and upload `report_sample.zip` to [Overleaf](https://www.overleaf.com/project).
 
 ---
 
@@ -116,11 +115,10 @@ Example: `NBC-Smith_Jones_Kim.py`
 
 - Do not include full code in the report—only outputs.
 - Use the three defined colors to highlight each member’s name in the title and contributions.
-- Use [Overleaf](https://www.overleaf.com/project) to compile `report_sample.tex` and include only the resulting PDF in your ZIP.
 
 - ✅ **Where to submit:**  
   Upload your renamed `.py` file to the course submission portal (e.g., Blackboard).
 
 ---
 
-📌 **Reminder:** Only submit your `.py` file and `.pdf` file together zipped as `NBC-Smith_Jones_Kim.zip` — do not submit the data files, utility scripts, \LaTeX script or the entire folder.
+📌 **Reminder:** Only submit your `.py` file and `.docx` file together zipped as `NBC-Smith_Jones_Kim.zip` — do not submit the data files, utility scripts, \LaTeX script or the entire folder.

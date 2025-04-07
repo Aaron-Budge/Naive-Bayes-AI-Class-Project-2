@@ -121,4 +121,4 @@ Example: `NBC-Smith_Jones_Kim.py`
 
 ---
 
-📌 **Reminder:** Only submit your `.py` file and `.docx` file together zipped as `NBC-Smith_Jones_Kim.zip` — do not submit the data files, utility scripts, \LaTeX script or the entire folder.
+📌 **Reminder:** Only submit your `.py` file and `.docx` file together zipped as `NBC-Smith_Jones_Kim.zip` — do not submit the data files, utility scripts, or the entire folder.

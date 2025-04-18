@@ -14,23 +14,11 @@ GitHub repository: https://github.com/aimacode/aima-python
 # ---------------------------------------------------------------
 # STEP 1 [10 pts]: Load the Dataset
 # ---------------------------------------------------------------
-# - Load the CSV file 'spotify_hits.csv' (located in the 'data' folder) into a pandas DataFrame.
-# - Hint: Use the load_dataset() function from dataset_utils.py. Note that you need to import the function first.
+from src.dataset_utils import load_dataset
+data = load_dataset("data/spotify_hits.csv")
 
-# import necessary modules and load the dataset. Hint: src/dataset_utils.py
-# YOUR CODE HERE:
-
-data =  # YOUR CODE HERE
-
-# - Display shape of the DataFrame.
-# - Hint: Use the shape attribute to get the dimensions.
-
-print(f"Data shape: ...") # YOUR CODE HERE
-
-# - Displace the first few rows of the DataFrame to understand its structure.
-# - Hint: Use the head() method to display the first few rows.
-
-# YOUR CODE HERE:
+print(f"Data shape: {data.shape}")
+print(data.head())
 
 # ---------------------------------------------------------------
 # STEP 2 [10 pts]: Create a Binary Target Column

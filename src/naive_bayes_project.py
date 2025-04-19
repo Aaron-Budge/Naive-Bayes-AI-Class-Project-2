@@ -29,17 +29,17 @@ print(data.head())
 # - Create a new column 'hit' from 'popularity'. A song is a hit if popularity ≥ 70; otherwise, it is not a hit.
 # - Hint: Use a lambda function to create the new column. The new column should be binary (0 for not a hit, 1 for a hit).
 
-data['hit'] = # YOUR CODE HERE
+data['hit'] = data['popularity'].apply(lambda x: 1 if x >= 70 else 0)
 
 # - Delete the original 'popularity' column as it is no longer needed.
 # - Hint: Use the drop() method to remove the column.
 
 # YOUR CODE HERE:
-data = # YOUR CODE HERE
+data = data.drop(columns =['popularity'])
 
 # - Display unique values of the 'hit' column to verify the transformation.
 
-# YOUR CODE HERE:
+print("Unique values in the 'hit' column:", data['hit'].unique())
 
 
 # ---------------------------------------------------------------

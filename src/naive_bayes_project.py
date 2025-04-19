@@ -18,7 +18,7 @@ import naive_bayes_model as NB_model
 # STEP 1 [10 pts]: Load the Dataset
 # ---------------------------------------------------------------
 #from src.dataset_utils import load_dataset
-data = dataset_U.load_dataset("data/spotify_hits.csv")
+data = dataset_U.load_dataset("../data/spotify_hits.csv")
 
 print(f"Data shape: {data.shape}")
 print(data.head())

@@ -11,11 +11,14 @@ The NaiveBayesContinuous model is based on Artificial Intelligence: A Modern App
 GitHub repository: https://github.com/aimacode/aima-python
 """
 
+import src.dataset_utils as dataset_U
+import src.naive_bayes_model as NB_model
+
 # ---------------------------------------------------------------
 # STEP 1 [10 pts]: Load the Dataset
 # ---------------------------------------------------------------
-from src.dataset_utils import load_dataset
-data = load_dataset("data/spotify_hits.csv")
+#from src.dataset_utils import load_dataset
+data = dataset_U.load_dataset("data/spotify_hits.csv")
 
 print(f"Data shape: {data.shape}")
 print(data.head())

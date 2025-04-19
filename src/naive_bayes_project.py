@@ -11,8 +11,8 @@ The NaiveBayesContinuous model is based on Artificial Intelligence: A Modern App
 GitHub repository: https://github.com/aimacode/aima-python
 """
 
-import src.dataset_utils as dataset_U
-import src.naive_bayes_model as NB_model
+import dataset_utils as dataset_U
+import naive_bayes_model as NB_model
 
 # ---------------------------------------------------------------
 # STEP 1 [10 pts]: Load the Dataset
@@ -48,18 +48,12 @@ data = # YOUR CODE HERE
 # - Prepare the dataset for training by:
 #   1. Keeping only numeric columns.
 #   2. Removing rows with missing values.
-# - Hint: Use select_dtypes() to select numeric columns and dropna() to remove missing values.
 # - Ensure that the 'hit' column is included in the final DataFrame for target variable.
 
-# YOUR CODE HERE:
 # Select numeric columns and remove missing values.
-data = # YOUR CODE HERE
-data = # YOUR CODE HERE
+data = data.select_dtypes(include='number').dropna()
 
-# - Display shape of the DataFrame.
-# - Hint: Use the shape attribute to get the dimensions.
-
-print(f"data shape: ...") # YOUR CODE HERE
+print(f"data shape: {data.shape}") 
 
 # ---------------------------------------------------------------
 # STEP 4 [10 pts]: Train/Test Split

@@ -63,10 +63,10 @@ print(f"data shape: {data.shape}")
 
 # YOUR CODE HERE:
 # Split the dataset.
-train_df, test_df = # YOUR CODE HERE
+train_df, test_df = dataset_U.split_dataset(data, test_size=0.2)
 
 # - Display the shape of the training and testing DataFrames.
-print(f"Train shape: {...}, Test shape: {...}") # YOUR CODE HERE
+print(f"Train shape: {train_df.shape}, Test shape: {test_df.shape}")
 
 # ---------------------------------------------------------------
 # STEP 5 [20 pts]: Train the Naive Bayes Model

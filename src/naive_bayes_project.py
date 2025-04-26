@@ -63,7 +63,7 @@ print(f"data shape: {data.shape}")
 
 # YOUR CODE HERE:
 # Split the dataset.
-train_df, test_df = dataset_U.split_dataset(data, test_size=0.2)
+train_df, test_df = dataset_U.split_dataset(data, target='hit')
 
 # - Display the shape of the training and testing DataFrames.
 print(f"Train shape: {train_df.shape}, Test shape: {test_df.shape}")
@@ -92,7 +92,7 @@ model = NB_model.NaiveBayesContinuous(train_dataset)
 # Write your loop to predict and calculate accuracy.
 correct = 0
 total = 0
-for row in test_df.iterrows():
+for _, row in test_df.iterrows():
     features = row.drop(labels='hit').to_dict()
     true_label = row['hit']
     predicted_label = model(features)
@@ -102,7 +102,7 @@ for row in test_df.iterrows():
 accuracy = correct/total
 print(f"Model accuracy: {accuracy:.2f}")
 
-
+'''
 # ---------------------------------------------------------------
 # STEP 7 [20 pts]: Answer Conceptual Questions
 # ---------------------------------------------------------------
@@ -177,3 +177,4 @@ bonus_task_1_interpretation = "" # YOUR INTERPRETATION HERE
 best_threshold = 0  # YOUR BEST THRESHOLD HERE
 best_accuracy = 0.0  # YOUR BEST ACCURACY HERE (update after testing)
 print(f"Best threshold: {best_threshold}, Best accuracy: {best_accuracy:.2f}")
+'''

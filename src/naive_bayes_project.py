@@ -39,7 +39,7 @@ data = data.drop(columns =['popularity'])
 
 # - Display unique values of the 'hit' column to verify the transformation.
 
-print("Unique values in the 'hit' column:", data['hit'].unique())
+print(data.head(), "\nSong is a 'hit' if hit = 1, not hit = 0.")
 
 
 # ---------------------------------------------------------------
@@ -77,8 +77,8 @@ print(f"Train shape: {train_df.shape}, Test shape: {test_df.shape}")
 # YOUR CODE HERE:
 # Create the DataSet object and train the model. Don't forget to import the NaiveBayesContinuous class.
 
-train_dataset = # YOUR CODE HERE
-model = # YOUR CODE HERE
+train_dataset = dataset_U.DataSet(train_df, target='hit')
+model = NB_model.NaiveBayesContinuous(train_dataset) 
 
 # ---------------------------------------------------------------
 # STEP 6 [20 pts]: Make Predictions and Evaluate

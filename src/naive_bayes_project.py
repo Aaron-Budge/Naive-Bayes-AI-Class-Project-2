@@ -89,17 +89,17 @@ model = NB_model.NaiveBayesContinuous(train_dataset)
 # - Hint: Use Naive Bayes' formula to calculate the probability of each class given the features.
 # - Accuracy = (Number of correct predictions) / (Total number of predictions)
 
-# YOUR CODE HERE:
 # Write your loop to predict and calculate accuracy.
-correct = # YOUR CODE HERE:
-total = # YOUR CODE HERE:
-for ... in test_df.iterrows():
-    features = # YOUR CODE HERE:
-    true_label = # YOUR CODE HERE:
-    predicted_label = # YOUR CODE HERE:
+correct = 0
+total = 0
+for row in test_df.iterrows():
+    features = row.drop(labels='hit').to_dict()
+    true_label = row['hit']
+    predicted_label = model(features)
     if predicted_label == true_label:
         correct += 1
-accuracy = # YOUR CODE HERE:
+    total+=1
+accuracy = correct/total
 print(f"Model accuracy: {accuracy:.2f}")
 
 

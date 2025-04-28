@@ -102,7 +102,7 @@ for _, row in test_df.iterrows():
 accuracy = correct/total
 print(f"Model accuracy: {accuracy:.2f}")
 
-'''
+
 # ---------------------------------------------------------------
 # STEP 7 [20 pts]: Answer Conceptual Questions
 # ---------------------------------------------------------------
@@ -117,9 +117,9 @@ print(f"Model accuracy: {accuracy:.2f}")
 # Hint: Correlation analysis can help identify influential features. Sort descending by correlation with the target variable. Target variable has correlation of 1.0.
 
 # YOUR CODE HERE:
-correlations = # YOUR CODE HERE
+correlations = data.corr()['hit'].drop('hit')
 print("Correlation of features with 'hit':")
-print(correlations)
+print(correlations.sort_values(ascending=False))
 
 q1_answer = ""  # YOUR ANSWER HERE
 q1_explanation = ""  # YOUR EXPLANATION HERE
@@ -141,10 +141,10 @@ q2_explanation = ""  # YOUR EXPLANATION HERE
 #   D. The model will always perform worse.
 # Hint: Consider how decision trees work compared to Naive Bayes. Ref: https://en.wikipedia.org/wiki/Decision_tree_learning
 
-q3_answer = ""  # YOUR ANSWER HERE
-q3_explanation = ""  # YOUR EXPLANATION HERE
+q3_answer = "C"  
+q3_explanation = "Decision trees create branches based on conditions (E.g. danceability > 0.5) so it would create hard splits." 
 
-
+'''
 # ---------------------------------------------------------------
 # BONUS SECTION: Advanced Analysis [10 bonus pts]
 # ---------------------------------------------------------------

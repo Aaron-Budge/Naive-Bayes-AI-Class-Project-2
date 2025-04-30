@@ -114,11 +114,6 @@ print(f"Model accuracy: {accuracy:.2f}")
 #   C. popularity and tempo
 #   D. artist name and genre
 
-# YOUR CODE HERE:
-correlations = data.corr(numeric_only=True)['popularity'].sort_values(ascending=False)
-print("Correlation of features with 'hit':")
-print(correlations)
-
 q1_answer = "B"  # YOUR ANSWER HERE
 q1_explanation = """Danceability, acousticness, and instrumentalness are continuous audio features
 that reflect a song’s sound profile and show meaningful variation across tracks.

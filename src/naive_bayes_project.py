@@ -114,15 +114,18 @@ print(f"Model accuracy: {accuracy:.2f}")
 #   C. popularity and tempo
 #   D. artist name and genre
 
-# Q1: B
-"""
-Features like danceability, acousticness, and instrumentalness are 
-continuous variables that vary meaningfully across tracks and can 
-be directly correlated with popularity. Categorical 
-features like artist name and genre appear inconsistently and lack 
-numerical value, making them less effective for prediction on if
-a song will be a hit or not.
-"""
+# YOUR CODE HERE:
+correlations = data.corr(numeric_only=True)['popularity'].sort_values(ascending=False)
+print("Correlation of features with 'hit':")
+print(correlations)
+
+q1_answer = "B"  # YOUR ANSWER HERE
+q1_explanation = """Danceability, acousticness, and instrumentalness are continuous audio features
+that reflect a song’s sound profile and show meaningful variation across tracks.
+These traits are more predictive of popularity compared to categorical attributes
+like artist name or genre, which are not numeric and appear inconsistently.
+The correlation analysis supports this, showing these audio features align more
+strongly with the likelihood of a song being a hit."""
 
 # Hint: Correlation analysis can help identify influential features. Sort descending by correlation with the target variable. Target variable has correlation of 1.0.
 

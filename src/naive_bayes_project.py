@@ -63,9 +63,9 @@ print(f"data shape: {data.shape}")
 
 # YOUR CODE HERE:
 # Split the dataset.
-train_df, test_df = dataset_U.split_dataset(data, target='hit')
+train_df, test_df = dataset_U.split_dataset(data, 'hit', test_size=0.2)
 
-# - Display the shape of the training and testing DataFrames.
+# Display the shape of the training and testing DataFrames.
 print(f"Train shape: {train_df.shape}, Test shape: {test_df.shape}")
 
 # ---------------------------------------------------------------
@@ -113,6 +113,16 @@ print(f"Model accuracy: {accuracy:.2f}")
 #   B. danceability, acousticness, and instrumentalness
 #   C. popularity and tempo
 #   D. artist name and genre
+
+# Q1: B
+"""
+Features like danceability, acousticness, and instrumentalness
+are direct indicators of a song’s audio characteristics and tend to
+correlate more strongly with hit status than identifiers like track ID
+or categorical attributes such as artist name or genre.
+Correlation analysis showed that these features have a higher correlation
+with the target variable 'hit', making them more influential.
+"""
 
 # Hint: Correlation analysis can help identify influential features. Sort descending by correlation with the target variable. Target variable has correlation of 1.0.
 

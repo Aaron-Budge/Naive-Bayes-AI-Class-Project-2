@@ -116,12 +116,12 @@ print(f"Model accuracy: {accuracy:.2f}")
 
 # Q1: B
 """
-Features like danceability, acousticness, and instrumentalness
-are direct indicators of a song’s audio characteristics and tend to
-correlate more strongly with hit status than identifiers like track ID
-or categorical attributes such as artist name or genre.
-Correlation analysis showed that these features have a higher correlation
-with the target variable 'hit', making them more influential.
+Features like danceability, acousticness, and instrumentalness are 
+continuous variables that vary meaningfully across tracks and can 
+be directly correlated with popularity. Categorical 
+features like artist name and genre appear inconsistently and lack 
+numerical value, making them less effective for prediction on if
+a song will be a hit or not.
 """
 
 # Hint: Correlation analysis can help identify influential features. Sort descending by correlation with the target variable. Target variable has correlation of 1.0.

@@ -139,8 +139,8 @@ q1_explanation = ""  # YOUR EXPLANATION HERE
 #   D. They are weighted by importance.
 # Hint: Refer to the Naive Bayes assumption. Ref: https://en.wikipedia.org/wiki/Naive_Bayes_classifier
 
-q2_answer = ""  # YOUR ANSWER HERE
-q2_explanation = ""  # YOUR EXPLANATION HERE
+q2_answer = "C"  
+q2_explanation = "The assumption made by the Naive Bayes model is that its independent given the target class, shown in our code the target class being 'hit'." 
 
 # Q3 [5 pts]: What is a likely difference if a decision tree is used instead of Naive Bayes? Explain your reasoning.
 #   A. The model will assume independence of features.

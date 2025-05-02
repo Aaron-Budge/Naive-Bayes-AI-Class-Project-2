@@ -129,9 +129,6 @@ correlations = data.corr()['hit'].drop('hit')
 print("Correlation of features with 'hit':")
 print(correlations.sort_values(ascending=False))
 
-q1_answer = ""  # YOUR ANSWER HERE
-q1_explanation = ""  # YOUR EXPLANATION HERE
-
 # Q2 [5 pts]: What assumption does the Naive Bayes model make about the input features? Explain your reasoning.
 #   A. They follow a uniform distribution.
 #   B. They are normally distributed.
